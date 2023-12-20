@@ -29,11 +29,13 @@ const HubspotForm = ({ slice }: HubspotFormProps): JSX.Element => {
       data-slice-variation={slice.variation}
       className={s.section}
     >
-      {formCreated && loaded ? (
-        <div id="hubspot-form-wrapper" />
-      ) : (
-        <Skeleton type={slice.primary.loaderType} />
-      )}
+      <div className={s.content}>
+        {formCreated && loaded ? (
+          <div id="hubspot-form-wrapper" />
+        ) : (
+          <Skeleton type={slice.primary.loaderType} />
+        )}
+      </div>
     </section>
   );
 };

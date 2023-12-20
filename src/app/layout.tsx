@@ -35,7 +35,7 @@ export default function RootLayout({
       </head>
       <body className={`${poppins.variable} ${jakarta.variable}`}>
         <Providers>
-          {children}
+          <div className="content">{children}</div>
 
           <PrismicPreview repositoryName={repositoryName} />
         </Providers>
