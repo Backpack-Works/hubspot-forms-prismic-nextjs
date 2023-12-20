@@ -1,0 +1,35 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"fromId": {
+				"__TYPE__": "FieldContent",
+				"value": "plant",
+				"type": "Text"
+			},
+			"loaderType": {
+				"__TYPE__": "FieldContent",
+				"value": "2",
+				"type": "Select"
+			},
+			"formName": {
+				"__TYPE__": "FieldContent",
+				"value": "tone",
+				"type": "Text"
+			},
+			"fromConfirmationText": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Enim cupidatat magna consectetur aute officia ipsum. Excepteur officia quis esse consequat commodo laborum est non commodo tempor adipisicing eu quis amet."
+						}
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]

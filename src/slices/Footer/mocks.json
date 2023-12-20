@@ -1,0 +1,20 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"copyright": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Duis commodo officia enim exercitation sit eu dolor mollit. Culpa deserunt non amet ipsum cillum aliquip nostrud reprehenderit labore cillum quis."
+						}
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]

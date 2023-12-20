@@ -1,0 +1,55 @@
+{
+  "id": "hubspot_form",
+  "type": "SharedSlice",
+  "name": "HubspotForm",
+  "description": "HubspotForm",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "fromId": {
+          "type": "Text",
+          "config": {
+            "label": "FromId",
+            "placeholder": "Hubspot form id"
+          }
+        },
+        "loaderType": {
+          "type": "Select",
+          "config": {
+            "label": "LoaderType",
+            "placeholder": "Type of Skeleton loader",
+            "options": [
+              "1",
+              "2",
+              "3"
+            ],
+            "default_value": "1"
+          }
+        },
+        "formName": {
+          "type": "Text",
+          "config": {
+            "label": "FormName",
+            "placeholder": "Hubspot Form Name"
+          }
+        },
+        "fromConfirmationText": {
+          "type": "StructuredText",
+          "config": {
+            "label": "FromConfirmationText",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "single": "paragraph,heading1,heading2,heading3,heading4,heading5,heading6"
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}
