@@ -15,14 +15,14 @@
         "fromId": {
           "type": "Text",
           "config": {
-            "label": "FromId",
+            "label": "Form Id",
             "placeholder": "Hubspot form id"
           }
         },
         "loaderType": {
           "type": "Select",
           "config": {
-            "label": "LoaderType",
+            "label": "Loader Type",
             "placeholder": "Type of Skeleton loader",
             "options": [
               "1",
@@ -35,14 +35,14 @@
         "formName": {
           "type": "Text",
           "config": {
-            "label": "FormName",
+            "label": "Form Name",
             "placeholder": "Hubspot Form Name"
           }
         },
         "fromConfirmationText": {
           "type": "StructuredText",
           "config": {
-            "label": "FromConfirmationText",
+            "label": "Form Confirmation Text",
             "placeholder": "",
             "allowTargetBlank": true,
             "single": "paragraph,heading1,heading2,heading3,heading4,heading5,heading6"

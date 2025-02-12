@@ -82,15 +82,15 @@ export type PageDocument<Lang extends string = string> =
 export type AllDocumentTypes = PageDocument;
 
 /**
- * Primary content in *Footer → Primary*
+ * Primary content in *Footer → Default → Primary*
  */
 export interface FooterSliceDefaultPrimary {
   /**
-   * Copyright field in *Footer → Primary*
+   * Copyright field in *Footer → Default → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: footer.primary.copyright
+   * - **API ID Path**: footer.default.primary.copyright
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   copyright: prismic.RichTextField;
@@ -124,46 +124,46 @@ type FooterSliceVariation = FooterSliceDefault;
 export type FooterSlice = prismic.SharedSlice<"footer", FooterSliceVariation>;
 
 /**
- * Primary content in *HubspotForm → Primary*
+ * Primary content in *HubspotForm → Default → Primary*
  */
 export interface HubspotFormSliceDefaultPrimary {
   /**
-   * FromId field in *HubspotForm → Primary*
+   * Form Id field in *HubspotForm → Default → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: Hubspot form id
-   * - **API ID Path**: hubspot_form.primary.fromId
+   * - **API ID Path**: hubspot_form.default.primary.fromId
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   fromId: prismic.KeyTextField;
 
   /**
-   * LoaderType field in *HubspotForm → Primary*
+   * Loader Type field in *HubspotForm → Default → Primary*
    *
    * - **Field Type**: Select
    * - **Placeholder**: Type of Skeleton loader
    * - **Default Value**: 1
-   * - **API ID Path**: hubspot_form.primary.loaderType
+   * - **API ID Path**: hubspot_form.default.primary.loaderType
    * - **Documentation**: https://prismic.io/docs/field#select
    */
   loaderType: prismic.SelectField<"1" | "2" | "3", "filled">;
 
   /**
-   * FormName field in *HubspotForm → Primary*
+   * Form Name field in *HubspotForm → Default → Primary*
    *
    * - **Field Type**: Text
    * - **Placeholder**: Hubspot Form Name
-   * - **API ID Path**: hubspot_form.primary.formName
+   * - **API ID Path**: hubspot_form.default.primary.formName
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
   formName: prismic.KeyTextField;
 
   /**
-   * FromConfirmationText field in *HubspotForm → Primary*
+   * Form Confirmation Text field in *HubspotForm → Default → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: hubspot_form.primary.fromConfirmationText
+   * - **API ID Path**: hubspot_form.default.primary.fromConfirmationText
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   fromConfirmationText: prismic.RichTextField;
@@ -200,15 +200,15 @@ export type HubspotFormSlice = prismic.SharedSlice<
 >;
 
 /**
- * Primary content in *RichText → Primary*
+ * Primary content in *RichText → Default → Primary*
  */
 export interface RichTextSliceDefaultPrimary {
   /**
-   * Content field in *RichText → Primary*
+   * Content field in *RichText → Default → Primary*
    *
    * - **Field Type**: Rich Text
    * - **Placeholder**: Lorem ipsum...
-   * - **API ID Path**: rich_text.primary.content
+   * - **API ID Path**: rich_text.default.primary.content
    * - **Documentation**: https://prismic.io/docs/field#rich-text-title
    */
   content: prismic.RichTextField;
@@ -250,6 +250,17 @@ declare module "@prismicio/client" {
       repositoryNameOrEndpoint: string,
       options?: prismic.ClientConfig,
     ): prismic.Client<AllDocumentTypes>;
+  }
+
+  interface CreateWriteClient {
+    (
+      repositoryNameOrEndpoint: string,
+      options: prismic.WriteClientConfig,
+    ): prismic.WriteClient<AllDocumentTypes>;
+  }
+
+  interface CreateMigration {
+    (): prismic.Migration<AllDocumentTypes>;
   }
 
   namespace Content {
